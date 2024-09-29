@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/ravin/PycharmProjects/automated-ml/mlruns/467665160239904688/9f26c5b54bd54f6daf935ef843ddbcef/artifacts
+end_time: 1727627615016
+entry_point_name: ''
+experiment_id: '467665160239904688'
+lifecycle_stage: active
+run_id: 9f26c5b54bd54f6daf935ef843ddbcef
+run_name: KNN_GridSearchCV
+run_uuid: 9f26c5b54bd54f6daf935ef843ddbcef
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1727627602373
+status: 3
+tags: []
+user_id: ravin

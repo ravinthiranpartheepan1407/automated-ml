@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/ravin/PycharmProjects/automated-ml/mlruns/467665160239904688/3fc494e8f6994ecc8f4ebcc13bc51426/artifacts
+end_time: 1727627516318
+entry_point_name: ''
+experiment_id: '467665160239904688'
+lifecycle_stage: active
+run_id: 3fc494e8f6994ecc8f4ebcc13bc51426
+run_name: Best_Model
+run_uuid: 3fc494e8f6994ecc8f4ebcc13bc51426
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1727627513920
+status: 3
+tags: []
+user_id: ravin

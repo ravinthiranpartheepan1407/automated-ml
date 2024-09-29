@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/ravin/PycharmProjects/automated-ml/mlruns/467665160239904688/694805fa5c4b4031b857b223bf4bf335/artifacts
+end_time: 1727627513911
+entry_point_name: ''
+experiment_id: '467665160239904688'
+lifecycle_stage: active
+run_id: 694805fa5c4b4031b857b223bf4bf335
+run_name: Naive Bayes_GridSearchCV
+run_uuid: 694805fa5c4b4031b857b223bf4bf335
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1727627509379
+status: 3
+tags: []
+user_id: ravin

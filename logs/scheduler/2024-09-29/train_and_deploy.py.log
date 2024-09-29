@@ -1,0 +1,366 @@
+[2024-09-29T13:56:05.007+0000] {processor.py:153} INFO - Started process (PID=197) to work on /opt/airflow/dags/train_and_deploy.py
+[2024-09-29T13:56:05.008+0000] {processor.py:743} INFO - Processing file /opt/airflow/dags/train_and_deploy.py for tasks to queue
+[2024-09-29T13:56:05.009+0000] {logging_mixin.py:137} INFO - [2024-09-29T13:56:05.009+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/train_and_deploy.py
+[2024-09-29T13:56:06.111+0000] {logging_mixin.py:137} INFO - [2024-09-29T13:56:06.107+0000] {dagbag.py:343} ERROR - Failed to import: /opt/airflow/dags/train_and_deploy.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 339, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/train_and_deploy.py", line 13, in <module>
+    df = pd.read_csv("/opt/airflow/dags/datasets")
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/util/_decorators.py", line 311, in wrapper
+    return func(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/io/parsers/readers.py", line 586, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/io/parsers/readers.py", line 482, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/io/parsers/readers.py", line 811, in __init__
+    self._engine = self._make_engine(self.engine)
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/io/parsers/readers.py", line 1040, in _make_engine
+    return mapping[engine](self.f, **self.options)  # type: ignore[call-arg]
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/io/parsers/c_parser_wrapper.py", line 51, in __init__
+    self._open_handles(src, kwds)
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/io/parsers/base_parser.py", line 229, in _open_handles
+    errors=kwds.get("encoding_errors", "strict"),
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/io/common.py", line 707, in get_handle
+    newline="",
+IsADirectoryError: [Errno 21] Is a directory: '/opt/airflow/dags/datasets'
+[2024-09-29T13:56:06.116+0000] {processor.py:755} WARNING - No viable dags retrieved from /opt/airflow/dags/train_and_deploy.py
+[2024-09-29T13:56:06.138+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/train_and_deploy.py took 1.133 seconds
+[2024-09-29T13:56:36.436+0000] {processor.py:153} INFO - Started process (PID=217) to work on /opt/airflow/dags/train_and_deploy.py
+[2024-09-29T13:56:36.437+0000] {processor.py:743} INFO - Processing file /opt/airflow/dags/train_and_deploy.py for tasks to queue
+[2024-09-29T13:56:36.438+0000] {logging_mixin.py:137} INFO - [2024-09-29T13:56:36.438+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/train_and_deploy.py
+[2024-09-29T13:56:37.478+0000] {logging_mixin.py:137} INFO - [2024-09-29T13:56:37.474+0000] {dagbag.py:343} ERROR - Failed to import: /opt/airflow/dags/train_and_deploy.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 339, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/train_and_deploy.py", line 13, in <module>
+    df = pd.read_csv("/opt/airflow/dags/datasets")
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/util/_decorators.py", line 311, in wrapper
+    return func(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/io/parsers/readers.py", line 586, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/io/parsers/readers.py", line 482, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/io/parsers/readers.py", line 811, in __init__
+    self._engine = self._make_engine(self.engine)
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/io/parsers/readers.py", line 1040, in _make_engine
+    return mapping[engine](self.f, **self.options)  # type: ignore[call-arg]
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/io/parsers/c_parser_wrapper.py", line 51, in __init__
+    self._open_handles(src, kwds)
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/io/parsers/base_parser.py", line 229, in _open_handles
+    errors=kwds.get("encoding_errors", "strict"),
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/io/common.py", line 707, in get_handle
+    newline="",
+IsADirectoryError: [Errno 21] Is a directory: '/opt/airflow/dags/datasets'
+[2024-09-29T13:56:37.479+0000] {processor.py:755} WARNING - No viable dags retrieved from /opt/airflow/dags/train_and_deploy.py
+[2024-09-29T13:56:37.497+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/train_and_deploy.py took 1.064 seconds
+[2024-09-29T13:57:07.813+0000] {processor.py:153} INFO - Started process (PID=234) to work on /opt/airflow/dags/train_and_deploy.py
+[2024-09-29T13:57:07.813+0000] {processor.py:743} INFO - Processing file /opt/airflow/dags/train_and_deploy.py for tasks to queue
+[2024-09-29T13:57:07.814+0000] {logging_mixin.py:137} INFO - [2024-09-29T13:57:07.814+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/train_and_deploy.py
+[2024-09-29T13:57:08.834+0000] {logging_mixin.py:137} INFO - [2024-09-29T13:57:08.829+0000] {dagbag.py:343} ERROR - Failed to import: /opt/airflow/dags/train_and_deploy.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 339, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/train_and_deploy.py", line 13, in <module>
+    df = pd.read_csv("/opt/airflow/dags/datasets")
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/util/_decorators.py", line 311, in wrapper
+    return func(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/io/parsers/readers.py", line 586, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/io/parsers/readers.py", line 482, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/io/parsers/readers.py", line 811, in __init__
+    self._engine = self._make_engine(self.engine)
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/io/parsers/readers.py", line 1040, in _make_engine
+    return mapping[engine](self.f, **self.options)  # type: ignore[call-arg]
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/io/parsers/c_parser_wrapper.py", line 51, in __init__
+    self._open_handles(src, kwds)
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/io/parsers/base_parser.py", line 229, in _open_handles
+    errors=kwds.get("encoding_errors", "strict"),
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/io/common.py", line 707, in get_handle
+    newline="",
+IsADirectoryError: [Errno 21] Is a directory: '/opt/airflow/dags/datasets'
+[2024-09-29T13:57:08.836+0000] {processor.py:755} WARNING - No viable dags retrieved from /opt/airflow/dags/train_and_deploy.py
+[2024-09-29T13:57:08.856+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/train_and_deploy.py took 1.045 seconds
+[2024-09-29T13:57:39.158+0000] {processor.py:153} INFO - Started process (PID=251) to work on /opt/airflow/dags/train_and_deploy.py
+[2024-09-29T13:57:39.159+0000] {processor.py:743} INFO - Processing file /opt/airflow/dags/train_and_deploy.py for tasks to queue
+[2024-09-29T13:57:39.160+0000] {logging_mixin.py:137} INFO - [2024-09-29T13:57:39.159+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/train_and_deploy.py
+[2024-09-29T13:57:40.339+0000] {logging_mixin.py:137} INFO - [2024-09-29T13:57:40.336+0000] {dagbag.py:343} ERROR - Failed to import: /opt/airflow/dags/train_and_deploy.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 339, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/train_and_deploy.py", line 13, in <module>
+    df = pd.read_csv("/opt/airflow/dags/datasets")
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/util/_decorators.py", line 311, in wrapper
+    return func(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/io/parsers/readers.py", line 586, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/io/parsers/readers.py", line 482, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/io/parsers/readers.py", line 811, in __init__
+    self._engine = self._make_engine(self.engine)
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/io/parsers/readers.py", line 1040, in _make_engine
+    return mapping[engine](self.f, **self.options)  # type: ignore[call-arg]
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/io/parsers/c_parser_wrapper.py", line 51, in __init__
+    self._open_handles(src, kwds)
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/io/parsers/base_parser.py", line 229, in _open_handles
+    errors=kwds.get("encoding_errors", "strict"),
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/io/common.py", line 707, in get_handle
+    newline="",
+IsADirectoryError: [Errno 21] Is a directory: '/opt/airflow/dags/datasets'
+[2024-09-29T13:57:40.341+0000] {processor.py:755} WARNING - No viable dags retrieved from /opt/airflow/dags/train_and_deploy.py
+[2024-09-29T13:57:40.358+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/train_and_deploy.py took 1.204 seconds
+[2024-09-29T13:58:10.486+0000] {processor.py:153} INFO - Started process (PID=268) to work on /opt/airflow/dags/train_and_deploy.py
+[2024-09-29T13:58:10.486+0000] {processor.py:743} INFO - Processing file /opt/airflow/dags/train_and_deploy.py for tasks to queue
+[2024-09-29T13:58:10.487+0000] {logging_mixin.py:137} INFO - [2024-09-29T13:58:10.487+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/train_and_deploy.py
+[2024-09-29T13:58:11.545+0000] {logging_mixin.py:137} INFO - [2024-09-29T13:58:11.541+0000] {dagbag.py:343} ERROR - Failed to import: /opt/airflow/dags/train_and_deploy.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 339, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/train_and_deploy.py", line 13, in <module>
+    df = pd.read_csv("/opt/airflow/dags/datasets")
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/util/_decorators.py", line 311, in wrapper
+    return func(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/io/parsers/readers.py", line 586, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/io/parsers/readers.py", line 482, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/io/parsers/readers.py", line 811, in __init__
+    self._engine = self._make_engine(self.engine)
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/io/parsers/readers.py", line 1040, in _make_engine
+    return mapping[engine](self.f, **self.options)  # type: ignore[call-arg]
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/io/parsers/c_parser_wrapper.py", line 51, in __init__
+    self._open_handles(src, kwds)
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/io/parsers/base_parser.py", line 229, in _open_handles
+    errors=kwds.get("encoding_errors", "strict"),
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/io/common.py", line 707, in get_handle
+    newline="",
+IsADirectoryError: [Errno 21] Is a directory: '/opt/airflow/dags/datasets'
+[2024-09-29T13:58:11.547+0000] {processor.py:755} WARNING - No viable dags retrieved from /opt/airflow/dags/train_and_deploy.py
+[2024-09-29T13:58:11.565+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/train_and_deploy.py took 1.082 seconds
+[2024-09-29T13:58:27.736+0000] {processor.py:153} INFO - Started process (PID=280) to work on /opt/airflow/dags/train_and_deploy.py
+[2024-09-29T13:58:27.737+0000] {processor.py:743} INFO - Processing file /opt/airflow/dags/train_and_deploy.py for tasks to queue
+[2024-09-29T13:58:27.738+0000] {logging_mixin.py:137} INFO - [2024-09-29T13:58:27.738+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/train_and_deploy.py
+[2024-09-29T13:58:28.732+0000] {logging_mixin.py:137} INFO - [2024-09-29T13:58:28.727+0000] {dagbag.py:343} ERROR - Failed to import: /opt/airflow/dags/train_and_deploy.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 339, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/train_and_deploy.py", line 13, in <module>
+    df = pd.read_csv("/opt/airflow/dags/datasets/tracks.csv")
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/util/_decorators.py", line 311, in wrapper
+    return func(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/io/parsers/readers.py", line 586, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/io/parsers/readers.py", line 482, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/io/parsers/readers.py", line 811, in __init__
+    self._engine = self._make_engine(self.engine)
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/io/parsers/readers.py", line 1040, in _make_engine
+    return mapping[engine](self.f, **self.options)  # type: ignore[call-arg]
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/io/parsers/c_parser_wrapper.py", line 51, in __init__
+    self._open_handles(src, kwds)
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/io/parsers/base_parser.py", line 229, in _open_handles
+    errors=kwds.get("encoding_errors", "strict"),
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/io/common.py", line 707, in get_handle
+    newline="",
+FileNotFoundError: [Errno 2] No such file or directory: '/opt/airflow/dags/datasets/tracks.csv'
+[2024-09-29T13:58:28.734+0000] {processor.py:755} WARNING - No viable dags retrieved from /opt/airflow/dags/train_and_deploy.py
+[2024-09-29T13:58:28.750+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/train_and_deploy.py took 1.016 seconds
+[2024-09-29T13:58:34.812+0000] {processor.py:153} INFO - Started process (PID=286) to work on /opt/airflow/dags/train_and_deploy.py
+[2024-09-29T13:58:34.813+0000] {processor.py:743} INFO - Processing file /opt/airflow/dags/train_and_deploy.py for tasks to queue
+[2024-09-29T13:58:34.814+0000] {logging_mixin.py:137} INFO - [2024-09-29T13:58:34.814+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/train_and_deploy.py
+[2024-09-29T13:58:35.740+0000] {logging_mixin.py:137} INFO - [2024-09-29T13:58:35.736+0000] {dagbag.py:343} ERROR - Failed to import: /opt/airflow/dags/train_and_deploy.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 339, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/train_and_deploy.py", line 13, in <module>
+    df = pd.read_csv("/opt/airflow/dags/datasets/tracks.csv")
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/util/_decorators.py", line 311, in wrapper
+    return func(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/io/parsers/readers.py", line 586, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/io/parsers/readers.py", line 482, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/io/parsers/readers.py", line 811, in __init__
+    self._engine = self._make_engine(self.engine)
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/io/parsers/readers.py", line 1040, in _make_engine
+    return mapping[engine](self.f, **self.options)  # type: ignore[call-arg]
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/io/parsers/c_parser_wrapper.py", line 51, in __init__
+    self._open_handles(src, kwds)
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/io/parsers/base_parser.py", line 229, in _open_handles
+    errors=kwds.get("encoding_errors", "strict"),
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/io/common.py", line 707, in get_handle
+    newline="",
+FileNotFoundError: [Errno 2] No such file or directory: '/opt/airflow/dags/datasets/tracks.csv'
+[2024-09-29T13:58:35.741+0000] {processor.py:755} WARNING - No viable dags retrieved from /opt/airflow/dags/train_and_deploy.py
+[2024-09-29T13:58:35.757+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/train_and_deploy.py took 0.948 seconds
+[2024-09-29T13:59:06.146+0000] {processor.py:153} INFO - Started process (PID=303) to work on /opt/airflow/dags/train_and_deploy.py
+[2024-09-29T13:59:06.147+0000] {processor.py:743} INFO - Processing file /opt/airflow/dags/train_and_deploy.py for tasks to queue
+[2024-09-29T13:59:06.148+0000] {logging_mixin.py:137} INFO - [2024-09-29T13:59:06.148+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/train_and_deploy.py
+[2024-09-29T13:59:07.108+0000] {logging_mixin.py:137} INFO - [2024-09-29T13:59:07.104+0000] {dagbag.py:343} ERROR - Failed to import: /opt/airflow/dags/train_and_deploy.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 339, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/train_and_deploy.py", line 13, in <module>
+    df = pd.read_csv("/opt/airflow/dags/datasets/tracks.csv")
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/util/_decorators.py", line 311, in wrapper
+    return func(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/io/parsers/readers.py", line 586, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/io/parsers/readers.py", line 482, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/io/parsers/readers.py", line 811, in __init__
+    self._engine = self._make_engine(self.engine)
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/io/parsers/readers.py", line 1040, in _make_engine
+    return mapping[engine](self.f, **self.options)  # type: ignore[call-arg]
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/io/parsers/c_parser_wrapper.py", line 51, in __init__
+    self._open_handles(src, kwds)
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/io/parsers/base_parser.py", line 229, in _open_handles
+    errors=kwds.get("encoding_errors", "strict"),
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/io/common.py", line 707, in get_handle
+    newline="",
+FileNotFoundError: [Errno 2] No such file or directory: '/opt/airflow/dags/datasets/tracks.csv'
+[2024-09-29T13:59:07.110+0000] {processor.py:755} WARNING - No viable dags retrieved from /opt/airflow/dags/train_and_deploy.py
+[2024-09-29T13:59:07.126+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/train_and_deploy.py took 0.983 seconds
+[2024-09-29T14:00:01.057+0000] {processor.py:153} INFO - Started process (PID=193) to work on /opt/airflow/dags/train_and_deploy.py
+[2024-09-29T14:00:01.058+0000] {processor.py:743} INFO - Processing file /opt/airflow/dags/train_and_deploy.py for tasks to queue
+[2024-09-29T14:00:01.059+0000] {logging_mixin.py:137} INFO - [2024-09-29T14:00:01.059+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/train_and_deploy.py
+[2024-09-29T14:00:02.221+0000] {logging_mixin.py:137} INFO - [2024-09-29T14:00:02.217+0000] {dagbag.py:343} ERROR - Failed to import: /opt/airflow/dags/train_and_deploy.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 339, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/train_and_deploy.py", line 13, in <module>
+    df = pd.read_csv("/opt/airflow/dags/datasets/tracks.csv")
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/util/_decorators.py", line 311, in wrapper
+    return func(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/io/parsers/readers.py", line 586, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/io/parsers/readers.py", line 482, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/io/parsers/readers.py", line 811, in __init__
+    self._engine = self._make_engine(self.engine)
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/io/parsers/readers.py", line 1040, in _make_engine
+    return mapping[engine](self.f, **self.options)  # type: ignore[call-arg]
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/io/parsers/c_parser_wrapper.py", line 51, in __init__
+    self._open_handles(src, kwds)
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/io/parsers/base_parser.py", line 229, in _open_handles
+    errors=kwds.get("encoding_errors", "strict"),
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/io/common.py", line 707, in get_handle
+    newline="",
+FileNotFoundError: [Errno 2] No such file or directory: '/opt/airflow/dags/datasets/tracks.csv'
+[2024-09-29T14:00:02.224+0000] {processor.py:755} WARNING - No viable dags retrieved from /opt/airflow/dags/train_and_deploy.py
+[2024-09-29T14:00:02.243+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/train_and_deploy.py took 1.191 seconds
+[2024-09-29T14:00:32.546+0000] {processor.py:153} INFO - Started process (PID=216) to work on /opt/airflow/dags/train_and_deploy.py
+[2024-09-29T14:00:32.548+0000] {processor.py:743} INFO - Processing file /opt/airflow/dags/train_and_deploy.py for tasks to queue
+[2024-09-29T14:00:32.549+0000] {logging_mixin.py:137} INFO - [2024-09-29T14:00:32.549+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/train_and_deploy.py
+[2024-09-29T14:00:33.662+0000] {logging_mixin.py:137} INFO - [2024-09-29T14:00:33.656+0000] {dagbag.py:343} ERROR - Failed to import: /opt/airflow/dags/train_and_deploy.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 339, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/train_and_deploy.py", line 13, in <module>
+    df = pd.read_csv("/opt/airflow/dags/datasets/tracks.csv")
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/util/_decorators.py", line 311, in wrapper
+    return func(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/io/parsers/readers.py", line 586, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/io/parsers/readers.py", line 482, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/io/parsers/readers.py", line 811, in __init__
+    self._engine = self._make_engine(self.engine)
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/io/parsers/readers.py", line 1040, in _make_engine
+    return mapping[engine](self.f, **self.options)  # type: ignore[call-arg]
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/io/parsers/c_parser_wrapper.py", line 51, in __init__
+    self._open_handles(src, kwds)
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/io/parsers/base_parser.py", line 229, in _open_handles
+    errors=kwds.get("encoding_errors", "strict"),
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/io/common.py", line 707, in get_handle
+    newline="",
+FileNotFoundError: [Errno 2] No such file or directory: '/opt/airflow/dags/datasets/tracks.csv'
+[2024-09-29T14:00:33.664+0000] {processor.py:755} WARNING - No viable dags retrieved from /opt/airflow/dags/train_and_deploy.py
+[2024-09-29T14:00:33.682+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/train_and_deploy.py took 1.139 seconds
+[2024-09-29T14:01:03.022+0000] {processor.py:153} INFO - Started process (PID=233) to work on /opt/airflow/dags/train_and_deploy.py
+[2024-09-29T14:01:03.023+0000] {processor.py:743} INFO - Processing file /opt/airflow/dags/train_and_deploy.py for tasks to queue
+[2024-09-29T14:01:03.024+0000] {logging_mixin.py:137} INFO - [2024-09-29T14:01:03.023+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/train_and_deploy.py
+[2024-09-29T14:01:03.945+0000] {logging_mixin.py:137} INFO - [2024-09-29T14:01:03.939+0000] {dagbag.py:343} ERROR - Failed to import: /opt/airflow/dags/train_and_deploy.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 339, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/train_and_deploy.py", line 13, in <module>
+    df = pd.read_csv("/opt/airflow/datasets/tracks.csv")
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/util/_decorators.py", line 311, in wrapper
+    return func(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/io/parsers/readers.py", line 586, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/io/parsers/readers.py", line 482, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/io/parsers/readers.py", line 811, in __init__
+    self._engine = self._make_engine(self.engine)
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/io/parsers/readers.py", line 1040, in _make_engine
+    return mapping[engine](self.f, **self.options)  # type: ignore[call-arg]
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/io/parsers/c_parser_wrapper.py", line 51, in __init__
+    self._open_handles(src, kwds)
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/io/parsers/base_parser.py", line 229, in _open_handles
+    errors=kwds.get("encoding_errors", "strict"),
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/io/common.py", line 707, in get_handle
+    newline="",
+FileNotFoundError: [Errno 2] No such file or directory: '/opt/airflow/datasets/tracks.csv'
+[2024-09-29T14:01:03.947+0000] {processor.py:755} WARNING - No viable dags retrieved from /opt/airflow/dags/train_and_deploy.py
+[2024-09-29T14:01:03.967+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/train_and_deploy.py took 0.947 seconds
+[2024-09-29T14:01:34.326+0000] {processor.py:153} INFO - Started process (PID=250) to work on /opt/airflow/dags/train_and_deploy.py
+[2024-09-29T14:01:34.327+0000] {processor.py:743} INFO - Processing file /opt/airflow/dags/train_and_deploy.py for tasks to queue
+[2024-09-29T14:01:34.327+0000] {logging_mixin.py:137} INFO - [2024-09-29T14:01:34.327+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/train_and_deploy.py
+[2024-09-29T14:01:35.326+0000] {logging_mixin.py:137} INFO - [2024-09-29T14:01:35.320+0000] {dagbag.py:343} ERROR - Failed to import: /opt/airflow/dags/train_and_deploy.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 339, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/train_and_deploy.py", line 13, in <module>
+    df = pd.read_csv("/opt/airflow/datasets/tracks.csv")
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/util/_decorators.py", line 311, in wrapper
+    return func(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/io/parsers/readers.py", line 586, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/io/parsers/readers.py", line 482, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/io/parsers/readers.py", line 811, in __init__
+    self._engine = self._make_engine(self.engine)
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/io/parsers/readers.py", line 1040, in _make_engine
+    return mapping[engine](self.f, **self.options)  # type: ignore[call-arg]
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/io/parsers/c_parser_wrapper.py", line 51, in __init__
+    self._open_handles(src, kwds)
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/io/parsers/base_parser.py", line 229, in _open_handles
+    errors=kwds.get("encoding_errors", "strict"),
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/io/common.py", line 707, in get_handle
+    newline="",
+FileNotFoundError: [Errno 2] No such file or directory: '/opt/airflow/datasets/tracks.csv'
+[2024-09-29T14:01:35.328+0000] {processor.py:755} WARNING - No viable dags retrieved from /opt/airflow/dags/train_and_deploy.py
+[2024-09-29T14:01:35.344+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/train_and_deploy.py took 1.021 seconds
+[2024-09-29T14:02:05.653+0000] {processor.py:153} INFO - Started process (PID=267) to work on /opt/airflow/dags/train_and_deploy.py
+[2024-09-29T14:02:05.654+0000] {processor.py:743} INFO - Processing file /opt/airflow/dags/train_and_deploy.py for tasks to queue
+[2024-09-29T14:02:05.655+0000] {logging_mixin.py:137} INFO - [2024-09-29T14:02:05.655+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/train_and_deploy.py
+[2024-09-29T14:02:05.663+0000] {logging_mixin.py:137} INFO - [2024-09-29T14:02:05.663+0000] {dagbag.py:320} INFO - File /opt/airflow/dags/train_and_deploy.py assumed to contain no DAGs. Skipping.
+[2024-09-29T14:02:05.663+0000] {processor.py:755} WARNING - No viable dags retrieved from /opt/airflow/dags/train_and_deploy.py
+[2024-09-29T14:02:05.678+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/train_and_deploy.py took 0.028 seconds
