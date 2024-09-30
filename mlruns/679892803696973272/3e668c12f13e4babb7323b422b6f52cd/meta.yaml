@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/ravin/PycharmProjects/automated-ml/mlruns/679892803696973272/3e668c12f13e4babb7323b422b6f52cd/artifacts
+end_time: 1727675341050
+entry_point_name: ''
+experiment_id: '679892803696973272'
+lifecycle_stage: active
+run_id: 3e668c12f13e4babb7323b422b6f52cd
+run_name: melodic-smelt-271
+run_uuid: 3e668c12f13e4babb7323b422b6f52cd
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1727675341032
+status: 4
+tags: []
+user_id: ravin

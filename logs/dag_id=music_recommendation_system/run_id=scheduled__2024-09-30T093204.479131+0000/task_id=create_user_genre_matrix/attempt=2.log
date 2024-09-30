@@ -1,0 +1,71 @@
+[2024-09-30T09:43:14.351+0000] {taskinstance.py:1083} INFO - Dependencies all met for <TaskInstance: music_recommendation_system.create_user_genre_matrix scheduled__2024-09-30T09:32:04.479131+00:00 [queued]>
+[2024-09-30T09:43:14.365+0000] {taskinstance.py:1083} INFO - Dependencies all met for <TaskInstance: music_recommendation_system.create_user_genre_matrix scheduled__2024-09-30T09:32:04.479131+00:00 [queued]>
+[2024-09-30T09:43:14.365+0000] {taskinstance.py:1279} INFO - 
+--------------------------------------------------------------------------------
+[2024-09-30T09:43:14.366+0000] {taskinstance.py:1280} INFO - Starting attempt 2 of 2
+[2024-09-30T09:43:14.366+0000] {taskinstance.py:1281} INFO - 
+--------------------------------------------------------------------------------
+[2024-09-30T09:43:14.386+0000] {taskinstance.py:1300} INFO - Executing <Task(PythonOperator): create_user_genre_matrix> on 2024-09-30 09:32:04.479131+00:00
+[2024-09-30T09:43:14.396+0000] {standard_task_runner.py:55} INFO - Started process 1348 to run task
+[2024-09-30T09:43:14.399+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'music_recommendation_system', 'create_user_genre_matrix', 'scheduled__2024-09-30T09:32:04.479131+00:00', '--job-id', '107', '--raw', '--subdir', 'DAGS_FOLDER/music_recommendation_retraining.py', '--cfg-path', '/tmp/tmp9tvpkf_5']
+[2024-09-30T09:43:14.401+0000] {standard_task_runner.py:83} INFO - Job 107: Subtask create_user_genre_matrix
+[2024-09-30T09:43:14.416+0000] {logging_mixin.py:137} WARNING - /home/***/.local/lib/python3.7/site-packages/***/settings.py:249 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-30T09:43:14.438+0000] {logging_mixin.py:137} WARNING - /home/***/.local/lib/python3.7/site-packages/***/utils/sqlalchemy.py:124 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-30T09:43:14.470+0000] {task_command.py:388} INFO - Running <TaskInstance: music_recommendation_system.create_user_genre_matrix scheduled__2024-09-30T09:32:04.479131+00:00 [running]> on host 1adfe0f4f205
+[2024-09-30T09:43:14.968+0000] {taskinstance.py:1509} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=music_recommendation_system
+AIRFLOW_CTX_TASK_ID=create_user_genre_matrix
+AIRFLOW_CTX_EXECUTION_DATE=2024-09-30T09:32:04.479131+00:00
+AIRFLOW_CTX_TRY_NUMBER=2
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2024-09-30T09:32:04.479131+00:00
+[2024-09-30T09:43:14.970+0000] {taskinstance.py:1768} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 175, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 192, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/music_recommendation_retraining.py", line 75, in create_user_genre_matrix_task
+    df = pd.DataFrame.from_dict(df_dict)
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/core/frame.py", line 1593, in from_dict
+    return cls(data, index=index, columns=columns, dtype=dtype)
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/core/frame.py", line 730, in __init__
+    raise ValueError("DataFrame constructor not properly called!")
+ValueError: DataFrame constructor not properly called!
+[2024-09-30T09:43:14.985+0000] {taskinstance.py:1323} INFO - Marking task as FAILED. dag_id=music_recommendation_system, task_id=create_user_genre_matrix, execution_date=20240930T093204, start_date=20240930T094314, end_date=20240930T094314
+[2024-09-30T09:43:14.993+0000] {logging_mixin.py:137} INFO - Exception: Traceback (most recent call last):
+  File "/home/***/.local/lib/python3.7/site-packages/***/models/taskinstance.py", line 1374, in _run_raw_task
+    self._execute_task_with_callbacks(context, test_mode)
+  File "/home/***/.local/lib/python3.7/site-packages/***/models/taskinstance.py", line 1520, in _execute_task_with_callbacks
+    result = self._execute_task(context, task_orig)
+  File "/home/***/.local/lib/python3.7/site-packages/***/models/taskinstance.py", line 1581, in _execute_task
+    result = execute_callable(context=context)
+  File "/home/***/.local/lib/python3.7/site-packages/***/operators/python.py", line 175, in execute
+    return_value = self.execute_callable()
+  File "/home/***/.local/lib/python3.7/site-packages/***/operators/python.py", line 192, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/***/dags/music_recommendation_retraining.py", line 75, in create_user_genre_matrix_task
+    df = pd.DataFrame.from_dict(df_dict)
+  File "/home/***/.local/lib/python3.7/site-packages/pandas/core/frame.py", line 1593, in from_dict
+    return cls(data, index=index, columns=columns, dtype=dtype)
+  File "/home/***/.local/lib/python3.7/site-packages/pandas/core/frame.py", line 730, in __init__
+    raise ValueError("DataFrame constructor not properly called!")
+ValueError: DataFrame constructor not properly called!
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/***/.local/lib/python3.7/site-packages/datahub_***_plugin/datahub_plugin_v22.py", line 238, in custom_on_failure_callback
+    datahub_task_status_callback(context, status=InstanceRunResult.FAILURE)
+  File "/home/***/.local/lib/python3.7/site-packages/datahub_***_plugin/datahub_plugin_v22.py", line 105, in datahub_task_status_callback
+    DatahubGenericHook(config.datahub_conn_id).get_underlying_hook().make_emitter()
+  File "/home/***/.local/lib/python3.7/site-packages/datahub_***_plugin/hooks/datahub.py", line 255, in get_underlying_hook
+    conn = self.get_connection(self.datahub_conn_id)
+  File "/home/***/.local/lib/python3.7/site-packages/***/hooks/base.py", line 72, in get_connection
+    conn = Connection.get_connection_from_secrets(conn_id)
+  File "/home/***/.local/lib/python3.7/site-packages/***/models/connection.py", line 435, in get_connection_from_secrets
+    raise AirflowNotFoundException(f"The conn_id `{conn_id}` isn't defined")
+***.exceptions.AirflowNotFoundException: The conn_id `datahub_rest_default` isn't defined
+[2024-09-30T09:43:15.010+0000] {standard_task_runner.py:105} ERROR - Failed to execute job 107 for task create_user_genre_matrix (DataFrame constructor not properly called!; 1348)
+[2024-09-30T09:43:15.054+0000] {local_task_job.py:208} INFO - Task exited with return code 1
+[2024-09-30T09:43:15.086+0000] {taskinstance.py:2578} INFO - 0 downstream tasks scheduled from follow-on schedule check

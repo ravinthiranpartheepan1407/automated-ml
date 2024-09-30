@@ -1,0 +1,238 @@
+[2024-09-30T10:23:52.032+0000] {taskinstance.py:1083} INFO - Dependencies all met for <TaskInstance: music_recommendation_system.train_and_evaluate_model scheduled__2024-09-30T10:11:42.925013+00:00 [queued]>
+[2024-09-30T10:23:52.044+0000] {taskinstance.py:1083} INFO - Dependencies all met for <TaskInstance: music_recommendation_system.train_and_evaluate_model scheduled__2024-09-30T10:11:42.925013+00:00 [queued]>
+[2024-09-30T10:23:52.045+0000] {taskinstance.py:1279} INFO - 
+--------------------------------------------------------------------------------
+[2024-09-30T10:23:52.046+0000] {taskinstance.py:1280} INFO - Starting attempt 1 of 2
+[2024-09-30T10:23:52.046+0000] {taskinstance.py:1281} INFO - 
+--------------------------------------------------------------------------------
+[2024-09-30T10:23:52.064+0000] {taskinstance.py:1300} INFO - Executing <Task(PythonOperator): train_and_evaluate_model> on 2024-09-30 10:11:42.925013+00:00
+[2024-09-30T10:23:52.076+0000] {standard_task_runner.py:55} INFO - Started process 2322 to run task
+[2024-09-30T10:23:52.079+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'music_recommendation_system', 'train_and_evaluate_model', 'scheduled__2024-09-30T10:11:42.925013+00:00', '--job-id', '279', '--raw', '--subdir', 'DAGS_FOLDER/music_recommendation_retraining.py', '--cfg-path', '/tmp/tmplhy8lspn']
+[2024-09-30T10:23:52.083+0000] {standard_task_runner.py:83} INFO - Job 279: Subtask train_and_evaluate_model
+[2024-09-30T10:23:52.099+0000] {logging_mixin.py:137} WARNING - /home/***/.local/lib/python3.7/site-packages/***/settings.py:249 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-30T10:23:52.124+0000] {logging_mixin.py:137} WARNING - /home/***/.local/lib/python3.7/site-packages/***/utils/sqlalchemy.py:124 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-30T10:23:52.160+0000] {task_command.py:388} INFO - Running <TaskInstance: music_recommendation_system.train_and_evaluate_model scheduled__2024-09-30T10:11:42.925013+00:00 [running]> on host 1adfe0f4f205
+[2024-09-30T10:23:52.246+0000] {taskinstance.py:1509} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=music_recommendation_system
+AIRFLOW_CTX_TASK_ID=train_and_evaluate_model
+AIRFLOW_CTX_EXECUTION_DATE=2024-09-30T10:11:42.925013+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2024-09-30T10:11:42.925013+00:00
+[2024-09-30T10:23:52.387+0000] {connectionpool.py:813} WARNING - Retrying (Retry(total=4, connect=4, read=5, redirect=5, status=5)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f6960781b10>: Failed to establish a new connection: [Errno 111] Connection refused')': /api/2.0/mlflow/experiments/get-by-name?experiment_name=Music+Recommendation+System
+[2024-09-30T10:23:56.392+0000] {connectionpool.py:813} WARNING - Retrying (Retry(total=3, connect=3, read=5, redirect=5, status=5)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f6960781450>: Failed to establish a new connection: [Errno 111] Connection refused')': /api/2.0/mlflow/experiments/get-by-name?experiment_name=Music+Recommendation+System
+[2024-09-30T10:24:04.402+0000] {connectionpool.py:813} WARNING - Retrying (Retry(total=2, connect=2, read=5, redirect=5, status=5)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f6960779510>: Failed to establish a new connection: [Errno 111] Connection refused')': /api/2.0/mlflow/experiments/get-by-name?experiment_name=Music+Recommendation+System
+[2024-09-30T10:24:20.419+0000] {connectionpool.py:813} WARNING - Retrying (Retry(total=1, connect=1, read=5, redirect=5, status=5)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f6960779390>: Failed to establish a new connection: [Errno 111] Connection refused')': /api/2.0/mlflow/experiments/get-by-name?experiment_name=Music+Recommendation+System
+[2024-09-30T10:24:52.450+0000] {connectionpool.py:813} WARNING - Retrying (Retry(total=0, connect=0, read=5, redirect=5, status=5)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f6960789150>: Failed to establish a new connection: [Errno 111] Connection refused')': /api/2.0/mlflow/experiments/get-by-name?experiment_name=Music+Recommendation+System
+[2024-09-30T10:24:52.452+0000] {taskinstance.py:1768} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/urllib3/connection.py", line 175, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw
+  File "/home/airflow/.local/lib/python3.7/site-packages/urllib3/util/connection.py", line 95, in create_connection
+    raise err
+  File "/home/airflow/.local/lib/python3.7/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/urllib3/connectionpool.py", line 710, in urlopen
+    chunked=chunked,
+  File "/home/airflow/.local/lib/python3.7/site-packages/urllib3/connectionpool.py", line 398, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/home/airflow/.local/lib/python3.7/site-packages/urllib3/connection.py", line 239, in request
+    super(HTTPConnection, self).request(method, url, body=body, headers=headers)
+  File "/usr/local/lib/python3.7/http/client.py", line 1281, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "/usr/local/lib/python3.7/http/client.py", line 1327, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "/usr/local/lib/python3.7/http/client.py", line 1276, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/local/lib/python3.7/http/client.py", line 1036, in _send_output
+    self.send(msg)
+  File "/usr/local/lib/python3.7/http/client.py", line 976, in send
+    self.connect()
+  File "/home/airflow/.local/lib/python3.7/site-packages/urllib3/connection.py", line 205, in connect
+    conn = self._new_conn()
+  File "/home/airflow/.local/lib/python3.7/site-packages/urllib3/connection.py", line 187, in _new_conn
+    self, "Failed to establish a new connection: %s" % e
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x7f69607da690>: Failed to establish a new connection: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/requests/adapters.py", line 499, in send
+    timeout=timeout,
+  File "/home/airflow/.local/lib/python3.7/site-packages/urllib3/connectionpool.py", line 828, in urlopen
+    **response_kw
+  File "/home/airflow/.local/lib/python3.7/site-packages/urllib3/connectionpool.py", line 828, in urlopen
+    **response_kw
+  File "/home/airflow/.local/lib/python3.7/site-packages/urllib3/connectionpool.py", line 828, in urlopen
+    **response_kw
+  [Previous line repeated 2 more times]
+  File "/home/airflow/.local/lib/python3.7/site-packages/urllib3/connectionpool.py", line 788, in urlopen
+    method, url, error=e, _pool=self, _stacktrace=sys.exc_info()[2]
+  File "/home/airflow/.local/lib/python3.7/site-packages/urllib3/util/retry.py", line 592, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='localhost', port=5000): Max retries exceeded with url: /api/2.0/mlflow/experiments/get-by-name?experiment_name=Music+Recommendation+System (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f69607da690>: Failed to establish a new connection: [Errno 111] Connection refused'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/mlflow/utils/rest_utils.py", line 175, in http_request
+    **kwargs,
+  File "/home/airflow/.local/lib/python3.7/site-packages/mlflow/utils/rest_utils.py", line 97, in _get_http_response_with_retries
+    return session.request(method, url, **kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/requests/sessions.py", line 587, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/requests/sessions.py", line 701, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/requests/adapters.py", line 565, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='localhost', port=5000): Max retries exceeded with url: /api/2.0/mlflow/experiments/get-by-name?experiment_name=Music+Recommendation+System (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f69607da690>: Failed to establish a new connection: [Errno 111] Connection refused'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 175, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 192, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/music_recommendation_retraining.py", line 100, in train_and_evaluate_model
+    mlflow.set_experiment("Music Recommendation System")
+  File "/home/airflow/.local/lib/python3.7/site-packages/mlflow/tracking/fluent.py", line 114, in set_experiment
+    experiment = client.get_experiment_by_name(experiment_name)
+  File "/home/airflow/.local/lib/python3.7/site-packages/mlflow/tracking/client.py", line 585, in get_experiment_by_name
+    return self._tracking_client.get_experiment_by_name(name)
+  File "/home/airflow/.local/lib/python3.7/site-packages/mlflow/tracking/_tracking_service/client.py", line 241, in get_experiment_by_name
+    return self.store.get_experiment_by_name(name)
+  File "/home/airflow/.local/lib/python3.7/site-packages/mlflow/store/tracking/rest_store.py", line 332, in get_experiment_by_name
+    raise e
+  File "/home/airflow/.local/lib/python3.7/site-packages/mlflow/store/tracking/rest_store.py", line 319, in get_experiment_by_name
+    response_proto = self._call_endpoint(GetExperimentByName, req_body)
+  File "/home/airflow/.local/lib/python3.7/site-packages/mlflow/store/tracking/rest_store.py", line 57, in _call_endpoint
+    return call_endpoint(self.get_host_creds(), endpoint, method, json_body, response_proto)
+  File "/home/airflow/.local/lib/python3.7/site-packages/mlflow/utils/rest_utils.py", line 274, in call_endpoint
+    host_creds=host_creds, endpoint=endpoint, method=method, params=json_body
+  File "/home/airflow/.local/lib/python3.7/site-packages/mlflow/utils/rest_utils.py", line 184, in http_request
+    raise MlflowException("API request to %s failed with exception %s" % (url, e))
+mlflow.exceptions.MlflowException: API request to http://localhost:5000/api/2.0/mlflow/experiments/get-by-name failed with exception HTTPConnectionPool(host='localhost', port=5000): Max retries exceeded with url: /api/2.0/mlflow/experiments/get-by-name?experiment_name=Music+Recommendation+System (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f69607da690>: Failed to establish a new connection: [Errno 111] Connection refused'))
+[2024-09-30T10:24:52.470+0000] {taskinstance.py:1323} INFO - Marking task as UP_FOR_RETRY. dag_id=music_recommendation_system, task_id=train_and_evaluate_model, execution_date=20240930T101142, start_date=20240930T102352, end_date=20240930T102452
+[2024-09-30T10:24:52.480+0000] {logging_mixin.py:137} INFO - Exception: Traceback (most recent call last):
+  File "/home/***/.local/lib/python3.7/site-packages/urllib3/connection.py", line 175, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw
+  File "/home/***/.local/lib/python3.7/site-packages/urllib3/util/connection.py", line 95, in create_connection
+    raise err
+  File "/home/***/.local/lib/python3.7/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/***/.local/lib/python3.7/site-packages/urllib3/connectionpool.py", line 710, in urlopen
+    chunked=chunked,
+  File "/home/***/.local/lib/python3.7/site-packages/urllib3/connectionpool.py", line 398, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/home/***/.local/lib/python3.7/site-packages/urllib3/connection.py", line 239, in request
+    super(HTTPConnection, self).request(method, url, body=body, headers=headers)
+  File "/usr/local/lib/python3.7/http/client.py", line 1281, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "/usr/local/lib/python3.7/http/client.py", line 1327, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "/usr/local/lib/python3.7/http/client.py", line 1276, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/local/lib/python3.7/http/client.py", line 1036, in _send_output
+    self.send(msg)
+  File "/usr/local/lib/python3.7/http/client.py", line 976, in send
+    self.connect()
+  File "/home/***/.local/lib/python3.7/site-packages/urllib3/connection.py", line 205, in connect
+    conn = self._new_conn()
+  File "/home/***/.local/lib/python3.7/site-packages/urllib3/connection.py", line 187, in _new_conn
+    self, "Failed to establish a new connection: %s" % e
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x7f69607da690>: Failed to establish a new connection: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/***/.local/lib/python3.7/site-packages/requests/adapters.py", line 499, in send
+    timeout=timeout,
+  File "/home/***/.local/lib/python3.7/site-packages/urllib3/connectionpool.py", line 828, in urlopen
+    **response_kw
+  File "/home/***/.local/lib/python3.7/site-packages/urllib3/connectionpool.py", line 828, in urlopen
+    **response_kw
+  File "/home/***/.local/lib/python3.7/site-packages/urllib3/connectionpool.py", line 828, in urlopen
+    **response_kw
+  [Previous line repeated 2 more times]
+  File "/home/***/.local/lib/python3.7/site-packages/urllib3/connectionpool.py", line 788, in urlopen
+    method, url, error=e, _pool=self, _stacktrace=sys.exc_info()[2]
+  File "/home/***/.local/lib/python3.7/site-packages/urllib3/util/retry.py", line 592, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='localhost', port=5000): Max retries exceeded with url: /api/2.0/mlflow/experiments/get-by-name?experiment_name=Music+Recommendation+System (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f69607da690>: Failed to establish a new connection: [Errno 111] Connection refused'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/***/.local/lib/python3.7/site-packages/mlflow/utils/rest_utils.py", line 175, in http_request
+    **kwargs,
+  File "/home/***/.local/lib/python3.7/site-packages/mlflow/utils/rest_utils.py", line 97, in _get_http_response_with_retries
+    return session.request(method, url, **kwargs)
+  File "/home/***/.local/lib/python3.7/site-packages/requests/sessions.py", line 587, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/***/.local/lib/python3.7/site-packages/requests/sessions.py", line 701, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/***/.local/lib/python3.7/site-packages/requests/adapters.py", line 565, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='localhost', port=5000): Max retries exceeded with url: /api/2.0/mlflow/experiments/get-by-name?experiment_name=Music+Recommendation+System (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f69607da690>: Failed to establish a new connection: [Errno 111] Connection refused'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/***/.local/lib/python3.7/site-packages/***/models/taskinstance.py", line 1374, in _run_raw_task
+    self._execute_task_with_callbacks(context, test_mode)
+  File "/home/***/.local/lib/python3.7/site-packages/***/models/taskinstance.py", line 1520, in _execute_task_with_callbacks
+    result = self._execute_task(context, task_orig)
+  File "/home/***/.local/lib/python3.7/site-packages/***/models/taskinstance.py", line 1581, in _execute_task
+    result = execute_callable(context=context)
+  File "/home/***/.local/lib/python3.7/site-packages/***/operators/python.py", line 175, in execute
+    return_value = self.execute_callable()
+  File "/home/***/.local/lib/python3.7/site-packages/***/operators/python.py", line 192, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/***/dags/music_recommendation_retraining.py", line 100, in train_and_evaluate_model
+    mlflow.set_experiment("Music Recommendation System")
+  File "/home/***/.local/lib/python3.7/site-packages/mlflow/tracking/fluent.py", line 114, in set_experiment
+    experiment = client.get_experiment_by_name(experiment_name)
+  File "/home/***/.local/lib/python3.7/site-packages/mlflow/tracking/client.py", line 585, in get_experiment_by_name
+    return self._tracking_client.get_experiment_by_name(name)
+  File "/home/***/.local/lib/python3.7/site-packages/mlflow/tracking/_tracking_service/client.py", line 241, in get_experiment_by_name
+    return self.store.get_experiment_by_name(name)
+  File "/home/***/.local/lib/python3.7/site-packages/mlflow/store/tracking/rest_store.py", line 332, in get_experiment_by_name
+    raise e
+  File "/home/***/.local/lib/python3.7/site-packages/mlflow/store/tracking/rest_store.py", line 319, in get_experiment_by_name
+    response_proto = self._call_endpoint(GetExperimentByName, req_body)
+  File "/home/***/.local/lib/python3.7/site-packages/mlflow/store/tracking/rest_store.py", line 57, in _call_endpoint
+    return call_endpoint(self.get_host_creds(), endpoint, method, json_body, response_proto)
+  File "/home/***/.local/lib/python3.7/site-packages/mlflow/utils/rest_utils.py", line 274, in call_endpoint
+    host_creds=host_creds, endpoint=endpoint, method=method, params=json_body
+  File "/home/***/.local/lib/python3.7/site-packages/mlflow/utils/rest_utils.py", line 184, in http_request
+    raise MlflowException("API request to %s failed with exception %s" % (url, e))
+mlflow.exceptions.MlflowException: API request to http://localhost:5000/api/2.0/mlflow/experiments/get-by-name failed with exception HTTPConnectionPool(host='localhost', port=5000): Max retries exceeded with url: /api/2.0/mlflow/experiments/get-by-name?experiment_name=Music+Recommendation+System (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f69607da690>: Failed to establish a new connection: [Errno 111] Connection refused'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/***/.local/lib/python3.7/site-packages/datahub_***_plugin/datahub_plugin_v22.py", line 279, in custom_on_retry_callback
+    context, status=InstanceRunResult.UP_FOR_RETRY
+  File "/home/***/.local/lib/python3.7/site-packages/datahub_***_plugin/datahub_plugin_v22.py", line 105, in datahub_task_status_callback
+    DatahubGenericHook(config.datahub_conn_id).get_underlying_hook().make_emitter()
+  File "/home/***/.local/lib/python3.7/site-packages/datahub_***_plugin/hooks/datahub.py", line 255, in get_underlying_hook
+    conn = self.get_connection(self.datahub_conn_id)
+  File "/home/***/.local/lib/python3.7/site-packages/***/hooks/base.py", line 72, in get_connection
+    conn = Connection.get_connection_from_secrets(conn_id)
+  File "/home/***/.local/lib/python3.7/site-packages/***/models/connection.py", line 435, in get_connection_from_secrets
+    raise AirflowNotFoundException(f"The conn_id `{conn_id}` isn't defined")
+***.exceptions.AirflowNotFoundException: The conn_id `datahub_rest_default` isn't defined
+[2024-09-30T10:24:52.498+0000] {standard_task_runner.py:105} ERROR - Failed to execute job 279 for task train_and_evaluate_model (API request to http://localhost:5000/api/2.0/mlflow/experiments/get-by-name failed with exception HTTPConnectionPool(host='localhost', port=5000): Max retries exceeded with url: /api/2.0/mlflow/experiments/get-by-name?experiment_name=Music+Recommendation+System (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f69607da690>: Failed to establish a new connection: [Errno 111] Connection refused')); 2322)
+[2024-09-30T10:24:52.555+0000] {local_task_job.py:208} INFO - Task exited with return code 1
+[2024-09-30T10:24:52.576+0000] {taskinstance.py:2578} INFO - 0 downstream tasks scheduled from follow-on schedule check

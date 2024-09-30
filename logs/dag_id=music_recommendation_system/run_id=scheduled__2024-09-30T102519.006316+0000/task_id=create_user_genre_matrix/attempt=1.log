@@ -1,0 +1,94 @@
+[2024-09-30T10:26:23.722+0000] {taskinstance.py:1083} INFO - Dependencies all met for <TaskInstance: music_recommendation_system.create_user_genre_matrix scheduled__2024-09-30T10:25:19.006316+00:00 [queued]>
+[2024-09-30T10:26:23.738+0000] {taskinstance.py:1083} INFO - Dependencies all met for <TaskInstance: music_recommendation_system.create_user_genre_matrix scheduled__2024-09-30T10:25:19.006316+00:00 [queued]>
+[2024-09-30T10:26:23.738+0000] {taskinstance.py:1279} INFO - 
+--------------------------------------------------------------------------------
+[2024-09-30T10:26:23.739+0000] {taskinstance.py:1280} INFO - Starting attempt 1 of 2
+[2024-09-30T10:26:23.739+0000] {taskinstance.py:1281} INFO - 
+--------------------------------------------------------------------------------
+[2024-09-30T10:26:23.762+0000] {taskinstance.py:1300} INFO - Executing <Task(PythonOperator): create_user_genre_matrix> on 2024-09-30 10:25:19.006316+00:00
+[2024-09-30T10:26:23.773+0000] {standard_task_runner.py:55} INFO - Started process 2369 to run task
+[2024-09-30T10:26:23.776+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'music_recommendation_system', 'create_user_genre_matrix', 'scheduled__2024-09-30T10:25:19.006316+00:00', '--job-id', '286', '--raw', '--subdir', 'DAGS_FOLDER/music_recommendation_retraining.py', '--cfg-path', '/tmp/tmp9ijhzyjz']
+[2024-09-30T10:26:23.781+0000] {standard_task_runner.py:83} INFO - Job 286: Subtask create_user_genre_matrix
+[2024-09-30T10:26:23.797+0000] {logging_mixin.py:137} WARNING - /home/***/.local/lib/python3.7/site-packages/***/settings.py:249 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-30T10:26:23.819+0000] {logging_mixin.py:137} WARNING - /home/***/.local/lib/python3.7/site-packages/***/utils/sqlalchemy.py:124 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-30T10:26:23.852+0000] {task_command.py:388} INFO - Running <TaskInstance: music_recommendation_system.create_user_genre_matrix scheduled__2024-09-30T10:25:19.006316+00:00 [running]> on host 1adfe0f4f205
+[2024-09-30T10:26:23.945+0000] {taskinstance.py:1509} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=music_recommendation_system
+AIRFLOW_CTX_TASK_ID=create_user_genre_matrix
+AIRFLOW_CTX_EXECUTION_DATE=2024-09-30T10:25:19.006316+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2024-09-30T10:25:19.006316+00:00
+[2024-09-30T10:33:27.640+0000] {local_task_job.py:112} ERROR - Received SIGTERM. Terminating subprocesses
+[2024-09-30T10:33:27.707+0000] {process_utils.py:133} INFO - Sending Signals.SIGTERM to group 2369. PIDs of all processes in the group: [2369]
+[2024-09-30T10:33:27.709+0000] {process_utils.py:84} INFO - Sending the signal Signals.SIGTERM to group 2369
+[2024-09-30T10:33:27.711+0000] {taskinstance.py:1479} ERROR - Received SIGTERM. Terminating subprocesses.
+[2024-09-30T10:33:27.746+0000] {taskinstance.py:1768} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 175, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 192, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/music_recommendation_retraining.py", line 80, in create_user_genre_matrix_task
+    all_genres = set([genre for genres in df['artist_genres'] for genre in genres])
+  File "/opt/airflow/dags/music_recommendation_retraining.py", line 23, in create_user_genre_matrix
+    for genre in all_genres:
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/core/series.py", line 4357, in apply
+    return SeriesApply(self, func, convert_dtype, args, kwargs).apply()
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/core/apply.py", line 1043, in apply
+    return self.apply_standard()
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/core/apply.py", line 1101, in apply_standard
+    convert=self.convert_dtype,
+  File "pandas/_libs/lib.pyx", line 2859, in pandas._libs.lib.map_infer
+  File "/opt/airflow/dags/music_recommendation_retraining.py", line 23, in <lambda>
+    for genre in all_genres:
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 1481, in signal_handler
+    raise AirflowException("Task received SIGTERM signal")
+airflow.exceptions.AirflowException: Task received SIGTERM signal
+[2024-09-30T10:33:27.763+0000] {taskinstance.py:1323} INFO - Marking task as UP_FOR_RETRY. dag_id=music_recommendation_system, task_id=create_user_genre_matrix, execution_date=20240930T102519, start_date=20240930T102623, end_date=20240930T103327
+[2024-09-30T10:33:27.785+0000] {logging_mixin.py:137} INFO - Exception: Traceback (most recent call last):
+  File "/home/***/.local/lib/python3.7/site-packages/***/models/taskinstance.py", line 1374, in _run_raw_task
+    self._execute_task_with_callbacks(context, test_mode)
+  File "/home/***/.local/lib/python3.7/site-packages/***/models/taskinstance.py", line 1520, in _execute_task_with_callbacks
+    result = self._execute_task(context, task_orig)
+  File "/home/***/.local/lib/python3.7/site-packages/***/models/taskinstance.py", line 1581, in _execute_task
+    result = execute_callable(context=context)
+  File "/home/***/.local/lib/python3.7/site-packages/***/operators/python.py", line 175, in execute
+    return_value = self.execute_callable()
+  File "/home/***/.local/lib/python3.7/site-packages/***/operators/python.py", line 192, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/***/dags/music_recommendation_retraining.py", line 80, in create_user_genre_matrix_task
+    all_genres = set([genre for genres in df['artist_genres'] for genre in genres])
+  File "/opt/***/dags/music_recommendation_retraining.py", line 23, in create_user_genre_matrix
+    for genre in all_genres:
+  File "/home/***/.local/lib/python3.7/site-packages/pandas/core/series.py", line 4357, in apply
+    return SeriesApply(self, func, convert_dtype, args, kwargs).apply()
+  File "/home/***/.local/lib/python3.7/site-packages/pandas/core/apply.py", line 1043, in apply
+    return self.apply_standard()
+  File "/home/***/.local/lib/python3.7/site-packages/pandas/core/apply.py", line 1101, in apply_standard
+    convert=self.convert_dtype,
+  File "pandas/_libs/lib.pyx", line 2859, in pandas._libs.lib.map_infer
+  File "/opt/***/dags/music_recommendation_retraining.py", line 23, in <lambda>
+    for genre in all_genres:
+  File "/home/***/.local/lib/python3.7/site-packages/***/models/taskinstance.py", line 1481, in signal_handler
+    raise AirflowException("Task received SIGTERM signal")
+***.exceptions.AirflowException: Task received SIGTERM signal
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/***/.local/lib/python3.7/site-packages/datahub_***_plugin/datahub_plugin_v22.py", line 279, in custom_on_retry_callback
+    context, status=InstanceRunResult.UP_FOR_RETRY
+  File "/home/***/.local/lib/python3.7/site-packages/datahub_***_plugin/datahub_plugin_v22.py", line 105, in datahub_task_status_callback
+    DatahubGenericHook(config.datahub_conn_id).get_underlying_hook().make_emitter()
+  File "/home/***/.local/lib/python3.7/site-packages/datahub_***_plugin/hooks/datahub.py", line 255, in get_underlying_hook
+    conn = self.get_connection(self.datahub_conn_id)
+  File "/home/***/.local/lib/python3.7/site-packages/***/hooks/base.py", line 72, in get_connection
+    conn = Connection.get_connection_from_secrets(conn_id)
+  File "/home/***/.local/lib/python3.7/site-packages/***/models/connection.py", line 435, in get_connection_from_secrets
+    raise AirflowNotFoundException(f"The conn_id `{conn_id}` isn't defined")
+***.exceptions.AirflowNotFoundException: The conn_id `datahub_rest_default` isn't defined
+[2024-09-30T10:33:27.824+0000] {standard_task_runner.py:105} ERROR - Failed to execute job 286 for task create_user_genre_matrix (Task received SIGTERM signal; 2369)
+[2024-09-30T10:33:27.932+0000] {process_utils.py:79} INFO - Process psutil.Process(pid=2369, status='terminated', exitcode=1, started='10:26:23') (2369) terminated with exit code 1
+[2024-09-30T10:33:27.944+0000] {local_task_job.py:208} INFO - Task exited with return code 143
+[2024-09-30T10:33:28.039+0000] {taskinstance.py:2578} INFO - 0 downstream tasks scheduled from follow-on schedule check

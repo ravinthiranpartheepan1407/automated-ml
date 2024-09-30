@@ -4,10 +4,12 @@ services:
     image: mlflow
     build: .
     ports:
-      - "172.31.37.197:5000:5000"
+      - "5000:5000"
     volumes:
       - ./mlruns:/mlruns
     command: mlflow server --host 0.0.0.0 --port 5000
+    networks:
+      - airflow-mlflow-network
 
   airflow-webserver:
     build:
@@ -16,14 +18,14 @@ services:
     environment:
       - AIRFLOW__CORE__EXECUTOR=LocalExecutor
       - AIRFLOW__CORE__SQL_ALCHEMY_CONN=postgresql+psycopg2://airflow:airflow@postgres/airflow
-      - PYTHONPATH=/opt/airflow/dags
-      - MLFLOW_TRACKING_URI=http://172.31.37.197:5000
+      - AIRFLOW_CONN_DATAHUB_REST_DEFAULT=http://datahub:8080
     volumes:
       - ./dags:/opt/airflow/dags
       - ./logs:/opt/airflow/logs
-      - ./datasets:/opt/airflow/datasets  # Add this line
+      - ./datasets:/opt/airflow/datasets
+      - ./models:/opt/airflow/models
     ports:
-      - "172.31.37.197:8080:8000"
+      - "8080:8080"
     command: bash -c "
       airflow db init &&
       airflow users create --username admin --firstname Admin --lastname User --role Admin --password admin --email admin@example.com &&
@@ -33,6 +35,8 @@ services:
     depends_on:
       - postgres
       - mlflow
+    networks:
+      - airflow-mlflow-network
 
   airflow-scheduler:
     build:
@@ -41,17 +45,19 @@ services:
     environment:
       - AIRFLOW__CORE__EXECUTOR=LocalExecutor
       - AIRFLOW__CORE__SQL_ALCHEMY_CONN=postgresql+psycopg2://airflow:airflow@postgres/airflow
-      - PYTHONPATH=/opt/airflow/dags
-      - MLFLOW_TRACKING_URI=http://172.31.37.197:5000
+      - AIRFLOW_CONN_DATAHUB_REST_DEFAULT=http://datahub:8080
     volumes:
       - ./dags:/opt/airflow/dags
       - ./logs:/opt/airflow/logs
-      - ./datasets:/opt/airflow/datasets  # Add this line
+      - ./datasets:/opt/airflow/datasets
+      - ./models:/opt/airflow/models
     command: bash -c "airflow db upgrade && airflow scheduler"
     depends_on:
       - postgres
       - airflow-webserver
       - mlflow
+    networks:
+      - airflow-mlflow-network
 
   postgres:
     image: postgres:13
@@ -61,6 +67,12 @@ services:
       - POSTGRES_DB=airflow
     volumes:
       - postgres-db-volume:/var/lib/postgresql/data
+    networks:
+      - airflow-mlflow-network
 
 volumes:
   postgres-db-volume:
+
+networks:
+  airflow-mlflow-network:
+    driver: bridge

@@ -1,0 +1,37 @@
+[2024-09-30T10:20:31.759+0000] {taskinstance.py:1083} INFO - Dependencies all met for <TaskInstance: music_recommendation_system.create_user_genre_matrix scheduled__2024-09-30T10:19:24.793986+00:00 [queued]>
+[2024-09-30T10:20:31.773+0000] {taskinstance.py:1083} INFO - Dependencies all met for <TaskInstance: music_recommendation_system.create_user_genre_matrix scheduled__2024-09-30T10:19:24.793986+00:00 [queued]>
+[2024-09-30T10:20:31.774+0000] {taskinstance.py:1279} INFO - 
+--------------------------------------------------------------------------------
+[2024-09-30T10:20:31.775+0000] {taskinstance.py:1280} INFO - Starting attempt 1 of 2
+[2024-09-30T10:20:31.776+0000] {taskinstance.py:1281} INFO - 
+--------------------------------------------------------------------------------
+[2024-09-30T10:20:31.796+0000] {taskinstance.py:1300} INFO - Executing <Task(PythonOperator): create_user_genre_matrix> on 2024-09-30 10:19:24.793986+00:00
+[2024-09-30T10:20:31.810+0000] {standard_task_runner.py:55} INFO - Started process 2216 to run task
+[2024-09-30T10:20:31.814+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'music_recommendation_system', 'create_user_genre_matrix', 'scheduled__2024-09-30T10:19:24.793986+00:00', '--job-id', '257', '--raw', '--subdir', 'DAGS_FOLDER/music_recommendation_retraining.py', '--cfg-path', '/tmp/tmp6mxjmib9']
+[2024-09-30T10:20:31.816+0000] {standard_task_runner.py:83} INFO - Job 257: Subtask create_user_genre_matrix
+[2024-09-30T10:20:31.839+0000] {logging_mixin.py:137} WARNING - /home/***/.local/lib/python3.7/site-packages/***/settings.py:249 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-30T10:20:31.873+0000] {logging_mixin.py:137} WARNING - /home/***/.local/lib/python3.7/site-packages/***/utils/sqlalchemy.py:124 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-30T10:20:31.913+0000] {task_command.py:388} INFO - Running <TaskInstance: music_recommendation_system.create_user_genre_matrix scheduled__2024-09-30T10:19:24.793986+00:00 [running]> on host 1adfe0f4f205
+[2024-09-30T10:20:32.023+0000] {taskinstance.py:1509} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=music_recommendation_system
+AIRFLOW_CTX_TASK_ID=create_user_genre_matrix
+AIRFLOW_CTX_EXECUTION_DATE=2024-09-30T10:19:24.793986+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2024-09-30T10:19:24.793986+00:00
+[2024-09-30T10:29:51.783+0000] {python.py:177} INFO - Done. Returned value was: None
+[2024-09-30T10:29:51.799+0000] {taskinstance.py:1323} INFO - Marking task as SUCCESS. dag_id=music_recommendation_system, task_id=create_user_genre_matrix, execution_date=20240930T101924, start_date=20240930T102031, end_date=20240930T102951
+[2024-09-30T10:29:51.811+0000] {logging_mixin.py:137} INFO - Exception: Traceback (most recent call last):
+  File "/home/***/.local/lib/python3.7/site-packages/datahub_***_plugin/datahub_plugin_v22.py", line 258, in custom_on_success_callback
+    datahub_task_status_callback(context, status=InstanceRunResult.SUCCESS)
+  File "/home/***/.local/lib/python3.7/site-packages/datahub_***_plugin/datahub_plugin_v22.py", line 105, in datahub_task_status_callback
+    DatahubGenericHook(config.datahub_conn_id).get_underlying_hook().make_emitter()
+  File "/home/***/.local/lib/python3.7/site-packages/datahub_***_plugin/hooks/datahub.py", line 255, in get_underlying_hook
+    conn = self.get_connection(self.datahub_conn_id)
+  File "/home/***/.local/lib/python3.7/site-packages/***/hooks/base.py", line 72, in get_connection
+    conn = Connection.get_connection_from_secrets(conn_id)
+  File "/home/***/.local/lib/python3.7/site-packages/***/models/connection.py", line 435, in get_connection_from_secrets
+    raise AirflowNotFoundException(f"The conn_id `{conn_id}` isn't defined")
+***.exceptions.AirflowNotFoundException: The conn_id `datahub_rest_default` isn't defined
+[2024-09-30T10:29:52.057+0000] {local_task_job.py:208} INFO - Task exited with return code 0
+[2024-09-30T10:29:52.116+0000] {taskinstance.py:2578} INFO - 1 downstream tasks scheduled from follow-on schedule check

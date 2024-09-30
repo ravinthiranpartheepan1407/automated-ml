@@ -15,3 +15,8 @@ streamlit
 awscli
 joblib
 mlflow[sagemaker]
+uvicorn
+pydantic
+typing
+dill
+python-multipart
